@@ -27,3 +27,12 @@
 |--- framework-config.properties
 |--- testng.xml (Test ng suite)
 |--- pom.xml (Maven dependencies for Java)
+
+## Execution Instruction
+
+`
+mvn clean compile
+`
+`
+mvn test
+`
