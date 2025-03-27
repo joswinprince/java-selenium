@@ -1,37 +1,34 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.io.ObjectInputFilter.Config;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import base.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.GooglePage;
+import utils.ConfigReader;
 interface calc {
     int add(int a, int b);
 }
 
-public class GoogleTest {
-    private WebDriver driver;
-
+public class GoogleTest extends BaseTest {
+    private GooglePage googlePage;
+    private ConfigReader configReader;
     @BeforeClass
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-           // Configure ChromeOptions
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Use "--headless" for older versions
-        options.addArguments("--disable-gpu"); // Recommended to avoid rendering issues
-        options.addArguments("--window-size=1920,1080"); // Set screen size
-        options.addArguments("--no-sandbox"); // Bypass OS security model
-        driver = new ChromeDriver(options);
-
-      
+    public void setUpTest() {
+        setup();
+        googlePage = new GooglePage(driver);
+        configReader = new ConfigReader();
     }
-
+    
     @Test
     public void testGoogleTitle() {
-        driver.get("https://www.google.com");
+        driver.get(configReader.getProperty("googleUrl"));
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("Google"), "Title does not match!");
     }

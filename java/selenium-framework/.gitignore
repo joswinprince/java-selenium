@@ -1,3 +1,7 @@
 .vscode/
 target/
 reports/
+drivers/
+screenshots/
+logs/
+
