@@ -37,7 +37,13 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.5.1</version>
         </dependency>
-
+        
+        <!-- Cucumber for BDD -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.14.0</version>
+        </dependency>
         <!-- Logging (SLF4J + Log4j) -->
         <dependency>
             <groupId>org.slf4j</groupId>
