@@ -7,7 +7,7 @@
 |   |   |--- java
 |   |   |   |--- base (web driver setup and base classes)
 |   |   |   |--- config (properties or configuration files)
-|   |   |   |--- pages (Page bject Model classes)
+|   |   |   |--- pages (Page object Model classes)
 |   |   |   |--- utils (utility functions)
 |   |   |   |--- reporting (custom logging , error reporting)
 |   |   |--- resources (project resources)

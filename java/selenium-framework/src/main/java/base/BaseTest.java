@@ -8,7 +8,7 @@ public class BaseTest {
     protected static WebDriver driver;
 
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");   
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.home")+"\\chromedriver\\chromedriver.exe");   
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
