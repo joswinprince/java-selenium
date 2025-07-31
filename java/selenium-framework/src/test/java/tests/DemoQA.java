@@ -14,7 +14,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.ConfigReader;
+import io.qameta.allure.*;
 
+@Epic("DemoQA Feature")
+@Feature("DemoQA Functionality")
 public class DemoQA extends BaseTest {
     private DemoQAPage DemoQAPage;
     private ConfigReader configReader;
@@ -29,6 +32,9 @@ public class DemoQA extends BaseTest {
     }
 
     @Test
+    @Story("Valid login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("User logs in using valid credentials")
     public void testValidLogin() throws InterruptedException {
         // loginPage.enterUsername("testUser");
         // loginPage.enterPassword("password123");
