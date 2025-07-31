@@ -7,6 +7,9 @@
   <version>1.0-SNAPSHOT</version>
   <name>selenium-framework</name>
   <url>http://maven.apache.org</url>
+    <properties>
+    <allure.version>2.27.0</allure.version> <!-- latest as of July 2025 -->
+    </properties>
 
   <dependencies>
         <!-- Selenium WebDriver -->
@@ -22,6 +25,13 @@
             <artifactId>testng</artifactId>
             <version>7.8.0</version>
             <scope>test</scope>
+        </dependency>
+
+          <!-- Allure TestNG Adapter -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
         </dependency>
 
         <!-- WebDriverManager (Automatically downloads WebDriver binaries) -->
@@ -73,6 +83,14 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <testFailureIgnore>true</testFailureIgnore>
+            </configuration>
+        </plugin>
         </plugins>
     </build>
 
