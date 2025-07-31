@@ -1,7 +1,7 @@
 package tests;
 
 import base.BaseTest;
-import pages.DemoQAElement;
+import pages.DemoQAPage;
 
 import java.time.Duration;
 
@@ -16,14 +16,14 @@ import org.testng.annotations.Test;
 import utils.ConfigReader;
 
 public class DemoQA extends BaseTest {
-    private DemoQAElement demoQAElement;
+    private DemoQAPage DemoQAPage;
     private ConfigReader configReader;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     @BeforeMethod
     public void setUpTest() {
         setup();
-        demoQAElement = new DemoQAElement(driver);
+        DemoQAPage = new DemoQAPage(driver);
         configReader = new ConfigReader();
         driver.get(configReader.getProperty("baseUrl"));
     }
@@ -34,18 +34,18 @@ public class DemoQA extends BaseTest {
         // loginPage.enterPassword("password123");
         // loginPage.clickLogin();
         System.out.println("Configuration ");
-        System.out.println(configReader.getProperty("demoQAElement"));
+        System.out.println(configReader.getProperty("DemoQAPage"));
         String []deomoQAElements = configReader.getProperty("demoqaallElement").split(",");
         // for (String element : deomoQAElements) {
         //     System.out.println("Element: " + element);
-        //     String format = String.format(configReader.getProperty("demoQAElement"),element);
-        //     demoQAElement.selectElement(format);
+        //     String format = String.format(configReader.getProperty("DemoQAPage"),element);
+        //     DemoQAPage.selectElement(format);
         // }
 
         Assert.assertEquals(driver.getTitle(), "Example Domain");
-        demoQAElement.openDemoQA();
-        demoQAElement.selectTextBox();
-        demoQAElement.selectElement(configReader.getProperty("demoQAElement"));
+        DemoQAPage.openDemoQA();
+        DemoQAPage.selectTextBox();
+        DemoQAPage.selectElement(configReader.getProperty("DemoQAPage"));
         Thread.sleep(3000);
         WebElement eleme = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("null")));
     }

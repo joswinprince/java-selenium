@@ -2,10 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-public class DemoQAElement {
+public class DemoQAPage {
     
     private WebDriver driver;
-    public DemoQAElement(WebDriver driver) {
+    public DemoQAPage(WebDriver driver) {
         this.driver = driver;
     }
     public void openDemoQA() {
