@@ -1,1 +1,0 @@
-# Java script cypress framework

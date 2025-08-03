@@ -1,1 +1,0 @@
-# Type script playwright framework
