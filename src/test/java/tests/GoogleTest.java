@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import base.BaseTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.GooglePage;
 import utils.ConfigReader;
@@ -19,7 +20,7 @@ interface calc {
 public class GoogleTest extends BaseTest {
     private GooglePage googlePage;
     private ConfigReader configReader;
-    @BeforeClass
+    @BeforeMethod
     public void setUpTest() {
         setup();
         googlePage = new GooglePage(driver);

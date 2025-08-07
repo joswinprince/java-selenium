@@ -36,4 +36,15 @@ mvn clean compile
 `
 mvn test
 `
+# Generating Reports with report folder
+`
+allure generate allure-results --clean -o allure-report
+allure open allure-report
+`
+
+# Generating the report
+`
+allure serve allure-results
+`
+
 
