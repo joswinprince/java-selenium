@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest {
     private ConfigReader configReader;
 
     @BeforeMethod
-    public void setUpTest() {
+    public void setUpTest() throws Exception {
         setup();
         loginPage = new LoginPage(driver);
         configReader = new ConfigReader();

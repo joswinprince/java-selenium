@@ -21,7 +21,7 @@ public class GoogleTest extends BaseTest {
     private GooglePage googlePage;
     private ConfigReader configReader;
     @BeforeMethod
-    public void setUpTest() {
+    public void setUpTest() throws Exception {
         setup();
         googlePage = new GooglePage(driver);
         configReader = new ConfigReader();

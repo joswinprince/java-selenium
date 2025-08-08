@@ -24,7 +24,7 @@ public class DemoQA extends BaseTest {
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     @BeforeMethod
-    public void setUpTest() {
+    public void setUpTest() throws Exception {
         setup();
         DemoQAPage = new DemoQAPage(driver);
         configReader = new ConfigReader();
