@@ -3,4 +3,5 @@ reports/
 drivers/
 screenshots/
 tools/
+.allure/
 

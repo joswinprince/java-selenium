@@ -29,6 +29,4 @@ WORKDIR /automation
 COPY . .
 RUN mvn dependency:go-offline
 
-RUN mvn clean install 
-
-CMD ["sh", "-c", "mvn clean test && mvn allure:report"]
+CMD ["sh", "-c", "mvn clean test -Dallure.results.directory=target/allure-results allure:report"]

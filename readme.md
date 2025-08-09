@@ -47,6 +47,11 @@ allure open allure-report
 allure serve allure-results
 `
 
+# Running Locally 
+`
+mvn clean test -Dallure.results.directory=target/allure-results allure:report allure:serve
+`
+
 # To Run Locally as Docker 
 `
 docker build -t selenium-tests .
@@ -56,5 +61,7 @@ docker build -t selenium-tests .
 `
 docker run -it selenium-tests sh
 `
+
+
 # Moving Reports locally from docker
 docker run --rm -v "%cd%/allure-report:/automation/target/allure-report" selenium-tests
