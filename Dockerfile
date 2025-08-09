@@ -29,4 +29,6 @@ WORKDIR /automation
 COPY . .
 RUN mvn dependency:go-offline
 
-CMD ["sh", "-c", "mvn clean test -Dallure.results.directory=target/allure-results allure:report"]
+RUN chmod -R u+w /automation/target 
+
+CMD ["sh", "-c", "mvn test -Dallure.results.directory=target/allure-results allure:report"]
