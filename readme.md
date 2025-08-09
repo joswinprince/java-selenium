@@ -52,5 +52,9 @@ allure serve allure-results
 docker build -t selenium-tests .
 `
 
+# Run Docker and iterate to shell'
+`
+docker run -it selenium-tests sh
+`
 # Moving Reports locally from docker
 docker run --rm -v "%cd%/allure-report:/automation/target/allure-report" selenium-tests
