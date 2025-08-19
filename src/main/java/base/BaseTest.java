@@ -28,6 +28,8 @@ public class BaseTest {
         }
 
         options = new ChromeOptions();
+        options.addArguments("--incognito"); // Enable incognito mode
+
         // options.setBinary(System.getProperty("user.home")+"\\chromedriver\\chrome-win64\\chrome.exe");
         
         // options.setBinary("/usr/bin/google-chrome");
@@ -40,6 +42,7 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
+        
     }
 
     public void teardown() {

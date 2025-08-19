@@ -64,7 +64,14 @@ docker run -it selenium-tests sh
 
 
 # Moving Reports locally from docker
+`
 docker run --rm -v "%cd%/allure-report:/automation/target/allure-report" selenium-tests
+`
+
+#Moving Reports locally from docker linux:
+`
+docker run --rm -v "$(pwd)/allure-report:/automation/target/allure-report" selenium-test
+`
 
 # Mount the local folder to Docker and get the reports
 docker run --rm -v "%cd%/allure-report:/automation/target/allure-report" selenium-test

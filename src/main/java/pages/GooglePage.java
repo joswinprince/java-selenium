@@ -9,8 +9,12 @@ public class GooglePage {
         public GooglePage(WebDriver driver) {
             this.driver = driver;
         }
-         public void openpage() {
-        driver.get("https://google.com");
-    }
+        public void openpage(String url) {
+        driver.get(url);
+        }
+
+        public String getTitle() {
+            return driver.getTitle();
+        }
 
 }

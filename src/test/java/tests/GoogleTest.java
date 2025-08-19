@@ -29,8 +29,8 @@ public class GoogleTest extends BaseTest {
     
     @Test
     public void testGoogleTitle() {
-        driver.get(configReader.getProperty("googleUrl"));
-        String title = driver.getTitle();
+        googlePage.openpage(configReader.getProperty("googleUrl"));
+        String title = googlePage.getTitle();
         Assert.assertTrue(title.contains("Google"), "Title does not match!");
     }
 
